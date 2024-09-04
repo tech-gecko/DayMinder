@@ -5,11 +5,14 @@ venv/
 __pycache__/
 *.pyc
 
-# Ignore VS Code configuration files
-.vscode/
+# Ignore the config file
+config.py
 
 # Ignore environment variable files
 .env
 
 # Ignore database files
 *.sqlite3
+
+# Ignore VS Code configuration files
+.vscode/
