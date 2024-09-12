@@ -5,11 +5,11 @@ venv/
 __pycache__/
 *.pyc
 
-# Ignore the config file
+# Ignore the config file (contains sensitive information)
 config.py
 
 # Ignore environment variable files
-.env
+*.env
 
 # Ignore database files
 *.sqlite3
