@@ -52,28 +52,6 @@ To set up a local development environment for DayMinder:
 5. **Run the Application Locally**
     - ```flask run```
 
-### Deployment
-
-To deploy DayMinder on a production server, follow these steps:
-
-1. **Secure Your Server**
-    (Configure UFW to allow Nginx and SSH):
-    - ```sudo ufw allow 'Nginx Full'```
-    - ```sudo ufw enable```
-
-2. **Set Up Nginx**
-    - Configure Nginx as a reverse proxy to Gunicorn.
-    - Create an Nginx configuration file for your Flask app in ```/etc/nginx/sites-available/```.
-
-3. **Set Up SSL**
-    - Use Certbot to set up HTTPS: ```sudo certbot --nginx```
-
-4. **Deploy Gunicorn**
-    - Use Gunicorn to serve the Flask application: ```gunicorn --bind 0.0.0.0:8000 wsgi:app```
-
-5. **Load Balancing (Optional)**
-    - Configure HAProxy for load balancing across multiple servers if needed.
-
 ### GitHub Workflow
 
 If you want to contribute to DayMinder, here's how to do it:
