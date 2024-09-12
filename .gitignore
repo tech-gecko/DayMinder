@@ -4,15 +4,27 @@ venv/
 # Ignore Python cache files
 __pycache__/
 *.pyc
+*.py[cod]
 
 # Ignore the config file (contains sensitive information)
 config.py
 
 # Ignore environment variable files
 *.env
+variables.env
 
-# Ignore database files
-*.sqlite3
+# Ignore MySQL dump files
+*.sql
+*.gz
+
+# Ignore logs
+*.log
+
+# Ignore migration files created by Flask-Migrate
+migrations/
 
 # Ignore VS Code configuration files
 .vscode/
+
+# Ignore TechGecko's committing and pushing script
+pu.sh
