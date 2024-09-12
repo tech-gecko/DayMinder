@@ -25,3 +25,6 @@ migrations/
 
 # Ignore VS Code configuration files
 .vscode/
+
+# Ignore TechGecko's committing and pushing script
+pu.sh
