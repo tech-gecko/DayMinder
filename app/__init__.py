@@ -24,4 +24,11 @@ def create_app():
     #from .routes import api
     #app.register_blueprint(api)
 
+    # Import models to ensure they are registered with SQLAlchemy
+    from .models import User, Task, Reminder
+
+    # Create all tables that don't exist within the app context
+    with app.app_context():
+        db.create_all()
+
     return app
