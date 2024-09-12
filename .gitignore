@@ -20,7 +20,7 @@ variables.env
 # Ignore logs
 *.log
 
-# Ignore migration files created by Flask-Migrate
+# Ignore migration files created by Flask-Migrate for security purposes
 migrations/
 
 # Ignore VS Code configuration files
