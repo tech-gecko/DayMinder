@@ -1,4 +1,5 @@
-from app import db
+from . import db
+from datetime import datetime
 
 
 class User(db.Model):
@@ -6,7 +7,7 @@ class User(db.Model):
     user_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(45), unique=True, nullable=False)
     email = db.Column(db.String(45), unique=True, nullable=False)
-    password = db.Column(db.String(45), nullable=False)
+    password = db.Column(db.String(255), nullable=False)
     notification_preference = db.Column(
         db.Enum('Email', 'SMS', 'Push notifications')
     )
@@ -57,7 +58,10 @@ class Reminder(db.Model):
     task_id = db.Column(
         db.Integer, db.ForeignKey('tasks.task_id'), nullable=False
     )
-    reminder_time = db.Column(db.TIMESTAMP, nullable=False)
+    # Set default as UTC
+    reminder_time = db.Column(
+        db.DateTime, default=datetime.utcnow, nullable=False
+    )
     sent = db.Column(db.Boolean, default=False)
     sent_time = db.Column(db.DateTime, nullable=True)
 
